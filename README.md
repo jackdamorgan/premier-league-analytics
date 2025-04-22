@@ -40,16 +40,3 @@ The main objectives of the project are to:
   - GitHub – to document and version the project  
 
 ---
-
-## 📁 Project Structure
-
-premier-league-etl/
-├── data/                     # For CSV exports or raw API dumps
-├── notebooks/                # Jupyter notebooks for EDA
-├── sql/                      # Saved SQL queries
-├── src/
-│   ├── fetch_data.py         # Script to pull data from API
-│   ├── transform_data.py     # Data cleaning and transformation
-│   └── load_to_postgres.py   # Load transformed data to PostgreSQL
-├── requirements.txt          # List of Python dependencies
-└── README.md                 # This file
