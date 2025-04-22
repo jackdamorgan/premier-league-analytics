@@ -2,8 +2,12 @@ import requests
 import pandas as pd
 import psycopg2
 import json
+import os
+from dotenv import load_dotenv
 
-API_TOKEN = '40de67c3cbfe447493e2a4fcf1a54724'
+# Applying the API Token so I can pull new data
+load_dotenv()
+API_TOKEN = os.getenv("API_TOKEN")
 headers = { 'X-Auth-Token': API_TOKEN }
 url = 'https://api.football-data.org/v4/competitions/PL/matches?season=2023'
 
@@ -12,5 +16,7 @@ data = response.json()
 
 print(data.keys())
 
+# Getting the JSON locally to organize the data better
 with open("raw_matches.json", "w") as f:
     json.dump(data, f, indent=4)
+
